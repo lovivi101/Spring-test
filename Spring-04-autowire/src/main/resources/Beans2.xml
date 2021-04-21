@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <bean id="dog1" class="com.hong.autowire.Dog">
+        <property name="name" value="旺财"/>
+        <property name="age" value="12"/>
+    </bean>
+    <bean id="dog2" class="com.hong.autowire.Dog">
+        <property name="name" value="八哥"/>
+        <property name="age" value="4"/>
+    </bean>
+    <bean id="cat1" class="com.hong.autowire.Cat">
+        <property name="name" value="Tom"/>
+        <property name="age" value="7"/>
+    </bean>
+    <bean id="cat2" class="com.hong.autowire.Cat">
+        <property name="name" value="Garfield"/>
+        <property name="age" value="4"/>
+    </bean>
+
+    <bean id="User" class="com.hong.pojo.User2">
+        <property name="name" value="洪"/>
+    </bean>
+    <bean id="User1" class="com.hong.pojo.User3">
+        <property name="name" value="乐乐"/>
+    </bean>
+
+</beans>

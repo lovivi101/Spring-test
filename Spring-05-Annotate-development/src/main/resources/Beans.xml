@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.hong"/>
+
+
+<!--    @Component三个衍生注解
+        @Controller：web层
+        @Service：service层
+        @Repository：dao层
+        -->
+
+
+<!--    XML与注解比较
+
+    XML可以适用任何场景 ，结构清晰，维护方便
+
+    注解不是自己提供的类使用不了，开发简单方便
+
+    xml与注解整合开发 ：推荐最佳实践
+
+    xml管理Bean
+
+    注解完成属性注入
+
+    使用过程中， 可以不用扫描，扫描是为了类上的注解
+
+    <context:annotation-config/>
+    作用：
+
+    进行注解驱动注册，从而使注解生效
+
+    用于激活那些已经在spring容器里注册过的bean上面的注解，也就是显示的向Spring注册
+
+    如果不扫描包，就需要手动配置bean
+
+    如果不加注解驱动，则注入的值为null！-->
+</beans>

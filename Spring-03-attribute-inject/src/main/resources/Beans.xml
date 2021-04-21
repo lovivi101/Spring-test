@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.hong.pojo.User" p:age="22" p:name="洪晋宣"/>
+
+    <bean id="user1" class="com.hong.pojo.User" c:age="20" c:name="乐乐"/>
+
+
+    <bean id="course" class="com.hong.pojo.Course">
+        <property name="name">
+            <list>
+                <value>数学</value>
+                <value>语文</value>
+                <value>物理</value>
+                <value>化学</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="student" class="com.hong.pojo.Student">
+        <!--    第一种普通注入方式-->
+        <property name="name" value="洪晋宣"/>
+        <property name="age" value="20"/>
+        
+        <!--    第二种引入注入方式-->
+        <property name="course" ref="course"/>
+        
+        <!--    数组注入方式-->
+
+        <property name="hobby">
+            <array>
+                <value>篮球</value>
+                <value>下棋</value>
+                <value>斗地主</value>
+                <value>敲代码</value>
+            </array>
+        </property>
+        <!--    List注入方式-->
+
+        <property name="books">
+            <list>
+                <value>java</value>
+                <value>C</value>
+                <value>数据结构</value>
+                <value>Spring5</value>
+            </list>
+        </property>
+        <!--    Map注入方式-->
+
+        <property name="card">
+            <map>
+                <entry key="ID" value="1312412123"/>
+                <entry key="ID1" value="134314491"/>
+            </map>
+        </property>
+        <!--    Set注入方式-->
+
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>CF</value>
+                <value>CS:GO</value>
+                <value>CS</value>
+            </set>
+        </property>
+        <!--    Properties注入方式-->
+
+        <property name="mysql">
+            <props>
+                <prop key="driver">com.cj.mysql.jdbc.Driver</prop>
+                <prop key="url">jdbc:mysql://localhost:3306</prop>
+                <prop key="username">root</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
+        <!--    null注入-->
+        <property name="p">
+            <null/>
+        </property>
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+
+
+    <!-- more bean definitions go here -->
+
+</beans>

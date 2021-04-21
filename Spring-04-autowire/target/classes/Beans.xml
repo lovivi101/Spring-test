@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <context:annotation-config/>
+
+    <bean id="dog" class="com.hong.autowire.Dog">
+        <property name="name" value="旺财"/>
+        <property name="age" value="12"/>
+    </bean>
+    <bean id="dog" class="com.hong.autowire.Dog">
+        <property name="name" value="八哥"/>
+        <property name="age" value="4"/>
+    </bean>
+
+<!--
+    当一个bean节点带有 autowire byName的属性时。
+
+    将查找其类中所有的set方法名，例如setCat，获得将set去掉并且首字母小写的字符串，即cat。
+
+    去spring容器中寻找是否有此字符串名称id的对象。
+
+    如果有，就取出注入；如果没有，就报空指针异常。-->
+    <bean id="user1" class="com.hong.pojo.User" autowire="byName">
+    </bean>
+
+
+<!--    cat的bean名称改掉！测试！因为是按类型装配，所以并不会报异常，也不影响最后的结果。甚至将id属性去掉，也不影响结果。
+
+    这就是按照类型自动装配！-->
+    <bean id="user2" class="com.hong.pojo.User" autowire="byType"/>
+
+</beans>

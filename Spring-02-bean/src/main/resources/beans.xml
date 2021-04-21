@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--    DAO层的-->
+    <bean id="mysql" class="hong.dao.User_Mysql_impl"/>
+    <bean id="init" class="hong.dao.User_init_impl"/>
+
+
+<!--    业务层-->
+
+    <bean id="mysqlUser" class="hong.service.UserService_impl">
+        <property name="user" ref="mysql"/>
+    </bean>
+    <bean id="initUser" class="hong.service.UserService_impl">
+        <property name="user" ref="init"/>
+    </bean>
+
+
+<!--    无参构造-->
+    <bean id="User" class="hong.pojo.User">
+        <property name="name" value="hong"/>
+        <property name="age" value="12"/>
+    </bean>
+
+<!--    有参构造-->
+
+
+    <bean id="User1" class="hong.pojo.User">
+        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="name" value="hong"/>
+    </bean>
+
+
+
+</beans>
